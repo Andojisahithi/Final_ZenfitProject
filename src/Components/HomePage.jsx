@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link"; // Import HashLink
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 import logo from "../Assets/logo.jpg";
 import imagess from "../Assets/imagess.png";
@@ -20,7 +20,6 @@ import gif from "../Assets/gif.png";
 import mainpic from "../Assets/mainpic.jpeg";
 
 import "./Styles/Home.css";
-import { Link } from "react-router-dom";
 import Login from "./Login";
 
 import { FaFacebookF, FaInstagram, FaGithub, FaYoutube } from "react-icons/fa";
@@ -85,7 +84,10 @@ const HomePage = () => {
           </i>
         </div>
         <ul>
-          <li>HOME</li>
+          <li><HashLink className="homeheaderlink"smooth to="#HOME">
+            HOME
+          </HashLink>
+          </li>
           <li>
             <HashLink className="homeheaderlink" smooth to="#Services">
               SERVICES
@@ -96,13 +98,19 @@ const HomePage = () => {
               BMI CALCULATOR
             </HashLink>
           </li>
-          <li>PLANS</li>
+          <li>
+       
+          <button className="PLANS" onClick={handleOpenLogin}>PLANS</button>
+
+          </li>
           <li>
             <Link className="homeheaderlink" to="./AboutUs">
               ABOUT US
             </Link>
           </li>
-          <li>CONTACT</li>
+          <li>
+          <button className="PLANS" onClick={handleOpenLogin}>CONTACT</button>
+          </li>
         </ul>
         <div>
           <button onClick={handleOpenLogin}>JOIN NOW</button>
@@ -121,8 +129,8 @@ const HomePage = () => {
           </div>
         )}
       </div>
-      <div className="section_div_1">
-        <div className="pictureone">
+      <div className="section_div_1" id="#HOME">
+        <div className="pictureone" >
           <img
             src={imagess}
             alt="Zenfit gym homepage banner"
@@ -351,8 +359,7 @@ const HomePage = () => {
 
         <div className="last">
           <p>
-            At Zenfit, we believe fitness should be accessible to everyone! At
-            Zenfit, we believe fitness should be accessible to everyone! That's
+            At Zenfit, we believe fitness should be accessible to everyone! That's
             why we offer free memberships with no hidden fees. Our services and
             perks are available online and may vary depending on availability.
             You must be at least 18 years old to join, or 13-17 with
@@ -425,42 +432,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-// import logo from "../Assets/logo.jpg";
-// import "./Styles/Home.css";
 
-// const NavBar = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//   const toggleMenu = () => {
-//     setIsMenuOpen((prev) => !prev);
-//   };
-
-//   return (
-//     <div className="Header">
-//       <div className="brand-logo">
-//         <img src={logo} alt="Logo" />
-//         <i>
-//           <b>ZenFit</b>
-//         </i>
-//       </div>
-//       <button className="join-btn">JOIN NOW</button>
-//       <button className="hamburger-btn" onClick={toggleMenu}>
-//         ☰
-//       </button>
-//       <ul className={`nav-links ${isMenuOpen ? "show-menu" : ""}`}>
-//         <li>HOME</li>
-//         <li>SERVICES</li>
-//         <li>BMI CALCULATOR</li>
-//         <li>PLANS</li>
-//         <li>
-//           <Link to="./AboutUs">ABOUT US</Link>
-//         </li>
-//         <li>CONTACT</li>
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default NavBar;

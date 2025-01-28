@@ -13,6 +13,16 @@
     z-index: 10;
     
 }
+.PLANS {
+    background: none;
+    color: black;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0;
+}
+.PLANS:hover{
+    text-decoration: underline;
+}
 .homeheaderlink{
     color: black;
     text-decoration: none;

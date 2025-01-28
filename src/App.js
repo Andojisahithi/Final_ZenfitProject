@@ -8,12 +8,15 @@ import HomePage from "./Components/HomePage.jsx";
 import AboutUs from "./Components/AboutUs.jsx";
 import WorkOutPlan from "./Components/WorkOutPlan.jsx";
 
+
+
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
   return (
-    <Router>
+    <Router>     
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/AboutUs" element={<AboutUs/>}/>
@@ -23,6 +26,7 @@ function App() {
         <Route path="/DietPlan/:userId" element={<DietPlan />} />
         <Route path="/WorkOutPlan/:userId" element={<WorkOutPlan/>} />
       </Routes>
+      
     </Router>
   );
 }
